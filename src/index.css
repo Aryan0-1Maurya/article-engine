@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background-color: #252525;
+    color: #f1f1f1; */
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+/* Header */
+header {
+  background-color: #333333;
+  color: #f1f1f1;
+  /* background: linear-gradient(135deg, #434343, #000000);
+  padding: 16px; */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+  header ul li {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+  } */
+
+header ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 9px;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 7px;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  transform: scaleX(0);
+  transition: transform 0.1s ease;
+  transform: scaleX(1.2);
+}
+
+header ul li:hover::after {
+  transform: scaleX(1);
+}
+
+.pattern {
+  --s: 100px;
+  /* control the size */
+  --c1: #f8b195;
+  --c2: #355c7d;
+
+  --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
+    var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
+    var(--c1) 76% 84%, var(--c2) 86% 94%;
+  background:
+    radial-gradient(100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000),
+    radial-gradient(100% 100% at 0 100%,
+      #0000,
+      #0008 4%,
+      var(--_g),
+      var(--c1) 96%) var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+/*   .form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 480px;
+  } */
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.google__btn__shadow {
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+/* Dark theme styles for SweetAlert dialogs */
+.dark-theme {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.dark-theme .swal2-title {
+  color: #fff !important;
+}
+
+.dark-theme .swal2-content {
+  color: #fff !important;
+}
+
+.dark-theme-button {
+  background-color: #3085d6 !important;
+  color: #fff !important;
+}
+
+.dark-theme-button.cancel {
+  background-color: #d33 !important;
+}
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Set the number of lines to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(131, 125, 125, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(131, 125, 125, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(131, 125, 125, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(131, 125, 125, 0.9);
+}
+
+/* Styles for spinner for infinite scroll */
+.loader {
+  border-top-color: #493a3af1;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
