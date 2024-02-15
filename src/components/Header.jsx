@@ -138,7 +138,7 @@ const Header = () => {
                 "highlight"
                 } `}
             >
-              <Link to={`/myblogs/${auth.currentUser.uid}`}>My Posts</Link>
+              <Link to={`/myblogs/${auth.currentUser.uid}`}>My Blogs</Link>
             </li>
           )}
 
@@ -161,7 +161,7 @@ const Header = () => {
               <Link to='/Aiamsrbot'>Ai</Link>
             </li>
           )}
-          <li
+    <li
             className={`${styles.li} ${location.pathname === "/ContactForm" && "highlight"
               } `}
           >
