@@ -18,6 +18,7 @@ import Search from "./pages/Search";
 import Aiamsrbot from "./pages/Aiamsrbot";
 import About from "./pages/About";
 import Call from "./pages/Call";
+import ContactForm from "./pages/ContactForm";
 
 const App = () => {
   /* 
@@ -51,7 +52,7 @@ const App = () => {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/sign-out' element={<Logout />} />
           <Route path='/Search' element={<Search />} />
-        
+          <Route path='/ContactForm' element={<ContactForm />} />
           <Route path='/About' element={<About />} />
          
           <Route path='/*' element={<Error />} />
