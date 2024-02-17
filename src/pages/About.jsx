@@ -14,7 +14,7 @@ const About = () => {
     <div style={{ width: '100%', height: '100vh', overflow: 'hidden', position: 'relative' }}>
       {isLoading && <Loader />} {/* Show loader if isLoading is true */}
       <Iframe
-        url="https://amsrgroup-clg-threejs-pro.vercel.app/"
+        url="https://college-project-group.netlify.app/"
         width="100%"
         height="100%"
         display="initial"
